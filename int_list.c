@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//usa il file istruction.txt
+
+
 int main (void)
 {
 	int howmanyelem=0;		//contatore generale numero elementi
