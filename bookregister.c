@@ -3,7 +3,8 @@
 #include <string.h>
 
 
-/*This is a simple book register, dynamically allocated every time the user call the function 'book()'. In the main function few examples of testing*/
+/*This is a simple book register, dynamically allocated every time the user call the function 'book()'.
+In the main function few examples of testing*/
 
 char *start[0];
 int dim=0;
