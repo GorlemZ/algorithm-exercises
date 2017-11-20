@@ -4,10 +4,10 @@
 #include <ctype.h>
 
 #define WORD 15
-#define TEXT "text.txt"
+#define TEXT "text.txt" //name of the text file
 FILE *f;
 
-struct occurrence
+struct occurrence					//structure of the occurence 
 {
 	char word[WORD];
 	int n;
@@ -15,7 +15,7 @@ struct occurrence
 
 typedef struct occurrence * Occ ;
 
-struct bit_node
+struct bit_node						//structure of the node, in the binary tree 
 {
 	Occ item ;
 	struct bit_node *l , *r;
@@ -25,7 +25,7 @@ struct bit_node
 typedef struct bit_node * Bit_node ;
 
 
-Bit_node bit_new (Occ ite)
+Bit_node bit_new (Occ ite)				//creates and allocates a node
 {
 	Bit_node bn;
 	bn= malloc(sizeof(struct bit_node));
@@ -36,7 +36,7 @@ Bit_node bit_new (Occ ite)
 	return bn;
 }
 
-Occ occ_new(char * wordread)
+Occ occ_new(char * wordread)				//creates and allocates an occurence sructure
 {
 	Occ oc;
 	oc= malloc(sizeof(struct occurrence));
@@ -46,7 +46,7 @@ Occ occ_new(char * wordread)
 	return oc;
 }
 
-Bit_node search_node(char * string, Bit_node head)
+Bit_node search_node(char * string, Bit_node head)	//binary search 
 {
 	Bit_node notfound=NULL;
 	Bit_node bn;
@@ -71,7 +71,7 @@ Bit_node search_node(char * string, Bit_node head)
 }
 
 
-Bit_node insert_node(Bit_node toinsert, Bit_node head)//inserimento ricorsivo?
+Bit_node insert_node(Bit_node toinsert, Bit_node head)	//recursive insert
 {
 	Bit_node bnfound;
 	Bit_node bn= head;
@@ -120,7 +120,7 @@ Bit_node insert_node(Bit_node toinsert, Bit_node head)//inserimento ricorsivo?
 }
 
 
-void bist_orderprint (Bit_node p) //void bist_orderprint ( Bit_node p );
+void bist_orderprint (Bit_node p) 				//print the tree in alphabetical order
 {
 
 	if(p)
@@ -144,7 +144,7 @@ void bist_invorderprint (Bit_node p) //void bist_orderprint ( Bit_node p );
 }
 
 
-void bit_printassummary (Bit_node p, int spaces)
+void bit_printassummary (Bit_node p, int spaces)		//print the tree highlighting nodes structure
 {
 	Bit_node q=p;
 	char sp=' ';
@@ -178,7 +178,7 @@ void bit_printassummary (Bit_node p, int spaces)
 	}
 }
 
-Bit_node mainfirst (char *textname, Bit_node rt)
+Bit_node mainfirst (char *textname, Bit_node rt)		//creates the tree of word/occurence from the text
 {
 	Bit_node root=rt;
 	char *stop= "STOP";
@@ -223,7 +223,7 @@ Bit_node mainfirst (char *textname, Bit_node rt)
 	return root;
 }
 
-void mainsnd (Bit_node root)
+void mainsnd (Bit_node root)					//print occurences of words
 {
 	int i=0;
 	Bit_node bn;
