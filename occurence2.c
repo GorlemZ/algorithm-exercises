@@ -274,17 +274,17 @@ int main()
 
 	root=mainfirst(TEXT, root);
 
-	printf("\nOCCORRENZE DI PAROLE NEL TESTO IN ORDINE ALFABETICO:\n");
-	printf("****************************************************\n");
+	printf("\nOCCURENCES OF WORDS IN ALPHABETICAL ORDER:\n");
+	printf("********************************************\n");
 
 	bist_orderprint (root);
 
-	printf("\nOCCORRENZE DI PAROLE NEL TESTO IN ORDINE INVERSO:\n");
-	printf("*************************************************\n");
+	printf("\nOCCURENCES OF WORDS IN OPPOSITE ORDER:\n");
+	printf("****************************************\n");
 
 	bist_invorderprint (root);
 
-	printf("\nRICERCA DI PAROLE:\n");
+	printf("\nSEARCH BY WORDS:\n");
 	printf("******************\n");
 
 	mainsnd(root);
